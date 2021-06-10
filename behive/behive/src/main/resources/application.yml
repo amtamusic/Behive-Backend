@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: BeHive
+    port: 8080
