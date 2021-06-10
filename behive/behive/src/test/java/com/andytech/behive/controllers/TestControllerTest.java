@@ -1,7 +1,5 @@
-package com.andytech.behive;
+package com.andytech.behive.controllers;
 
-import com.andytech.behive.controllers.TeamController;
-import com.andytech.behive.entities.team.Team;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.runner.JUnitPlatform;
@@ -17,16 +15,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(JUnitPlatform.class)
-class TeamControllerTest {
+class TestControllerTest {
     @InjectMocks
-    TeamController teamController;
+    TestController testController;
 
     @Test
-    void addTeamTest() throws Exception {
+    void testController() {
         MockHttpServletRequest request = new MockHttpServletRequest();
-        Team team = new Team();
         RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
-        ResponseEntity<Team> responseEntity = teamController.addTeam(team);
+        ResponseEntity<String> responseEntity = testController.test();
         assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     }
 }

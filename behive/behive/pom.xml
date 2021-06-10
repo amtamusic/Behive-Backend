@@ -17,10 +17,22 @@
     <properties>
         <java.version>11</java.version>
         <jacoco.version>0.8.7</jacoco.version>
+        <sonar.login>${env.SONAR_LOGIN}</sonar.login>
+        <sonar.name>Behive2020_</sonar.name>
+        <sonar.password>Behive2020_</sonar.password>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <sonar.language>java</sonar.language>
-        <sonar.coverage.jacoco.xmlReportPaths>../behive/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ../behive/target/site/jacoco/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.exclusions>
+            **/common/*.java,
+            **/team/*.java,
+            **/user/*.java,
+            **/BehiveApplication.java,
+            **/LogMessage.java
+        </sonar.exclusions>
     </properties>
     <dependencies>
         <dependency>
@@ -107,6 +119,9 @@
                     <append>true</append>
                     <excludes>
                         <exclude>*MethodAccess</exclude>
+                        <exclude>**/config/**</exclude>
+                        <exclude>**/model/**</exclude>
+                        <exclude>**/item/**</exclude>
                     </excludes>
                 </configuration>
                 <executions>
