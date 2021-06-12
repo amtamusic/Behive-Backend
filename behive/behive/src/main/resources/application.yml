@@ -2,3 +2,9 @@ spring:
   application:
     name: BeHive
     port: 8080
+  data:
+    mongodb:
+      user: behive.admin
+      database: Behive
+      uri: mongodb+srv://Andres:AndresPassword@cluster0.s1laa.mongodb.net/test
+

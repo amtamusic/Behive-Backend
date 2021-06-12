@@ -2,6 +2,7 @@ package com.andytech.behive.entities.user;
 
 import com.andytech.behive.entities.common.Skill;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,8 @@ import java.util.Set;
 
 @Data
 public class User {
-    private long id;
+    @Id
+    private String id;
     private String name;
     private String lastName;
     private String password;
