@@ -9,11 +9,12 @@ import java.util.List;
 import java.util.Set;
 
 @Data
-public class Team {
+public class Project {
     @Id
     private String id;
     private User owner;
+    private User manager;
     private Set<User> teamMembers;
     private Set<Skill> teamSkills;
-    private List<Project> projects;
+    private List<Position> positions;
 }

@@ -38,17 +38,17 @@ class UserControllerTest {
     }
 
     @Test
-    void deleteUserTest() throws Exception {
+    void deleteUserTest() {
         User user = new User();
         user.setName("test");
         user.setLastName("test");
         when(userService.deleteUser(any())).thenReturn(true);
-        ResponseEntity<String> responseEntity = userController.deleteUser(user);
+        ResponseEntity<User> responseEntity = userController.deleteUser(user);
         assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
     }
 
     @Test
-    void updateUserTest() throws Exception {
+    void updateUserTest() {
         User user = new User();
         user.setName("test");
         user.setLastName("test");
@@ -58,7 +58,7 @@ class UserControllerTest {
     }
 
     @Test
-    void getUserTest() throws Exception {
+    void getUserTest() {
         User user = new User();
         user.setName("test");
         user.setLastName("test");
@@ -68,7 +68,7 @@ class UserControllerTest {
     }
 
     @Test
-    void getUserTestFail() throws Exception {
+    void getUserTestFail() {
         User user = new User();
         user.setName("test");
         user.setLastName("test");

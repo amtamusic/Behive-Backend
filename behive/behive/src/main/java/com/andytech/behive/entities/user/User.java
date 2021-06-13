@@ -12,6 +12,7 @@ import java.util.Set;
 public class User {
     @Id
     private String id;
+    private String organization;
     private String name;
     private String lastName;
     private String password;
@@ -24,4 +25,5 @@ public class User {
     private List<Review> peerReviews;
     private boolean isAdmin;
     private String accountStatus;
+    private boolean profileStatus;
 }

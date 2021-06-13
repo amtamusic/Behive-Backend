@@ -49,10 +49,10 @@ public class UserController {
 
     @DeleteMapping("/delete")
     @ResponseBody
-    public ResponseEntity<String> deleteUser(@RequestBody User user) {
+    public ResponseEntity<User> deleteUser(@RequestBody User user) {
         logUtils.logObject("Delete User received: %s", user);
         userService.deleteUser(user);
         logUtils.logString("User " + user.toString() + " deleted");
-        return new ResponseEntity<>(logUtils.getLogMessage().getMessage(), HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
