@@ -27,7 +27,7 @@ class TeamControllerTest {
     TeamService teamService;
 
     @Test
-    void addTeamTest() throws Exception {
+    void addTeamTest() {
         Team team = new Team();
         when(teamService.addTeam(any())).thenReturn(team);
         ResponseEntity<Team> responseEntity = teamController.addTeam(team);
@@ -35,7 +35,7 @@ class TeamControllerTest {
     }
 
     @Test
-    void deleteTeamTest() throws Exception {
+    void deleteTeamTest() {
         Team team = new Team();
         when(teamService.deleteTeam(any())).thenReturn(true);
         ResponseEntity<String> responseEntity = teamController.deleteTeam(team);
@@ -43,7 +43,7 @@ class TeamControllerTest {
     }
 
     @Test
-    void updateTeamTest() throws Exception {
+    void updateTeamTest() {
         Team team = new Team();
         when(teamService.updateTeam(any())).thenReturn(team);
         ResponseEntity<Team> responseEntity = teamController.updateTeam(team);
@@ -51,7 +51,7 @@ class TeamControllerTest {
     }
 
     @Test
-    void getTeamTest() throws Exception {
+    void getTeamTest() {
         Team team = new Team();
         when(teamService.getTeam(any())).thenReturn(team);
         ResponseEntity<Team> responseEntity = teamController.getTeam("1");
@@ -59,7 +59,7 @@ class TeamControllerTest {
     }
 
     @Test
-    void getTeamTestFail() throws Exception {
+    void getTeamTestFail() {
         Team team = new Team();
         when(teamService.getTeam(any())).thenReturn(team);
         ResponseEntity<Team> responseEntity = teamController.getTeam("a");
